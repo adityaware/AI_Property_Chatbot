@@ -120,7 +120,7 @@ Try typing:
 
 **Aditya Ware**  
 🎓 B.Tech in Artificial Intelligence and Data Science  
-📧 your-email@example.com  
+📧 adityaware8@gmail.com  
 🔗 [https://github.com/your-username](https://github.com/your-username)
 
 ---
