@@ -1,126 +1,138 @@
-# 🏡 AI Property Chatbot
+# 🏡 AI Property Recommendation System
 
-### 🚀 Company: NoBrokerage.com  
-### 👨‍💻 Developer: **Aditya Ware**  
-### 💼 Role: AI Engineer Intern Task  
+### 🚀 Overview
+The **AI Property Recommendation System** is an intelligent property discovery platform that allows users to search for real estate projects using **natural language queries** instead of complex filters.
 
----
+Users can type queries like:
+> “3BHK flat in Pune under ₹1.2 Cr”  
+> “Ready-to-move apartments in Mumbai”  
+> “Projects near Hinjewadi under 80 lakh”
 
-## 📖 Overview
-
-**AI Property Chatbot** is an intelligent assistant that helps users discover real estate projects using **natural language queries** like:
-
-> “3BHK flats in Pune under ₹1 crore”  
-> “Ready-to-move apartments in Baner”  
-
-This chatbot eliminates the need for manual filters — users can simply *ask* what they want, and the system automatically:
-- Understands the query using NLP and Regex  
-- Searches through project data from CSV files  
-- Generates factual summaries and top property results  
+The system understands the intent behind the query, extracts important filters such as **city, BHK, budget, and project status**, searches through the dataset, and displays the **best-matched property recommendations**.
 
 ---
 
-## 🧠 Features
-
-| Feature | Description |
-|----------|--------------|
-| **Natural Query Understanding** | Detects city, BHK type, price, and property status using Regex |
-| **Data-Driven Search** | Retrieves results from structured CSV files |
-| **Summarization Logic** | Generates factual responses from data only |
-| **Chat-Based Interface** | Streamlit UI similar to ChatGPT |
-| **Error Handling** | Friendly fallback when no results are found |
+## 🎯 Objective
+To build a smart recommendation system that leverages **Natural Language Processing (NLP)** and **structured data filtering** to assist users in finding the most relevant real estate options — all based on their query in plain English.
 
 ---
 
-## 🏗️ Tech Stack
+## 🧩 Features
+✅ Understands user intent through NLP  
+✅ Extracts filters like **City, BHK, Budget, Status, and Locality**  
+✅ Searches and recommends top matching projects from CSV data  
+✅ Generates a short summary describing the search results  
+✅ Interactive **Streamlit-based user interface**  
+✅ Clean, minimal, and responsive design with **background visuals**  
 
-| Layer | Tools / Libraries |
-|--------|-------------------|
-| **Frontend** | Streamlit |
-| **Backend** | Python |
+---
+
+## 🧠 NLP Capabilities
+- Rule-based and regex-driven intent parsing  
+- Detects:
+  - **City** (e.g., Pune, Mumbai)
+  - **BHK type** (e.g., 2BHK, 3BHK)
+  - **Budget** (e.g., under ₹1.2 Cr / under 50 Lakh)
+  - **Construction status** (Ready to move / Under construction)
+  - **Locality** (e.g., Baner, Wakad, Kothrud)
+
+---
+
+## 🧰 Tech Stack
+
+| Layer | Tools Used |
+|:------|:------------|
+| **Frontend / UI** | Streamlit, HTML/CSS Styling |
+| **Backend / Logic** | Python (Regex-based NLP) |
 | **Data Handling** | Pandas |
-| **NLP Parsing** | Regex |
-| **Storage** | CSV files |
-| **Deployment (Optional)** | Streamlit Cloud |
+| **Data Source** | Project CSV files (`project.csv`, `ProjectAddress.csv`) |
+| **Version Control** | Git, GitHub |
 
 ---
 
-## ⚙️ Installation & Setup
+## 🗂️ Folder Structure
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/your-username/AI_Property_Chatbot.git
-cd AI_Property_Chatbot
+```
+AI_Property_Recommendation_System/
+│
+├── app.py                     # Main Streamlit application file
+├── project.csv                # Property/project dataset
+├── ProjectAddress.csv         # Address-level dataset
+├── Backgrounds-Flat-Design-HD.jpg  # Background image
+├── README.md                  # Project documentation
+└── requirements.txt           # Python dependencies
 ```
 
-### 2️⃣ Install Dependencies
+---
+
+## ⚙️ Installation & Usage
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-username/AI_Property_Recommendation_System.git
+cd AI_Property_Recommendation_System
+```
+
+### 2️⃣ Create a virtual environment
+```bash
+python -m venv venv
+venv\Scripts\activate      # For Windows
+source venv/bin/activate   # For macOS/Linux
+```
+
+### 3️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Add Data Files
-Create a `data` folder and add:
-```
-data/
- ├── project.csv
- └── ProjectAddress.csv
-```
-
-### 4️⃣ Run the App
+### 4️⃣ Run the app
 ```bash
 streamlit run app.py
 ```
 
 ---
 
-## 💬 Example Queries
+## 🧮 Example Queries
+You can type natural queries like:
 
-Try typing:
-- `3BHK flats in Pune under 50 lakh`
-- `Ready-to-move apartments in Mumbai`
-- `Under construction projects in Hinjewadi`
-- `Standalone buildings in Pune`
-- `Projects in Baner near IT Park`
-
----
-
-## 🧩 Core Files
-
-| File | Description |
-|------|--------------|
-| `app.py` | Main Streamlit app |
-| `project.csv` | Project data |
-| `ProjectAddress.csv` | Address and locality data |
-| `requirements.txt` | Dependencies |
-| `README.md` | Documentation file |
+| Example Query | What Happens |
+|----------------|---------------|
+| `3BHK in Pune under 80 lakh` | Filters for 3BHK flats in Pune below ₹80 lakh |
+| `Ready to move projects in Mumbai` | Shows ready projects in Mumbai |
+| `Under construction flats in Baner` | Shows under-construction properties in Baner |
 
 ---
 
-## 🧠 Evaluation Criteria (Company Task)
+## 🧾 Output Summary Example
 
-| Criteria | Weight |
-|-----------|---------|
-| Query Understanding | 30% |
-| Result Accuracy | 25% |
-| Summary Quality | 20% |
-| Code Quality | 15% |
-| UI/UX | 10% |
+> **Found 6 matching 3BHK projects in Pune.**  
+> Most are located in Baner and Wakad.  
+> 4 are ready-to-move and 2 are under construction.
 
 ---
 
-## 🎯 Future Scope
-- Add semantic search (using embeddings)
-- Integrate with a live database (e.g., PostgreSQL)
-- Add map visualization for nearby areas
-- Deploy publicly on Streamlit Cloud
+## 📈 Future Enhancements
+- Add **semantic search** using embeddings (Sentence Transformers)
+- Integrate **LLM-based summarization**
+- Deploy on **Streamlit Cloud / Hugging Face Spaces**
+- Add **voice-based query input**
 
 ---
 
-## 👨‍💻 Developed By
+## 👨‍💻 Developer
 
-**Aditya Ware**  
-🎓 B.Tech in Artificial Intelligence and Data Science  
-📧 adityaware8@gmail.com  
-🔗 [https://github.com/your-username](https://github.com/your-username)
+**👤 Aditya Ware**  
+*AI & Data Science Graduate*  
+📍 Pune, India  
+💼 Passionate about AI, NLP, and Data Analytics  
+📧 [adityaware@example.com](mailto:adityaware@example.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/adityaware) • [GitHub](https://github.com/adityaware)
 
 ---
+
+## 🏁 License
+This project is open-source and available under the **MIT License**.
+
+---
+
+### ⭐ If you found this project useful, please give it a star on GitHub!
